@@ -1,21 +1,41 @@
-# login
+# 项目总结
 
-> A Vue.js project
+1. 这是一个电信通集团的后台管理系统，整个项目使用的是VUE搭的框架，用vuex做数据的管理，用VUR-Router做路由的跳转，还运用了Elementui框架
 
-## Build Setup
+2. 基于官方的vue-cli脚手架，在vue-cli的基础上对脚手架进行了自定义的配置，比如：
+   *  加了alias：{
+         "@":'src'
+     }  
+3. 路由的搭建：
 
-``` bash
-# install dependencies
-npm install
+    * {
+           
+            routes：[
+                {
+                    path：'',
+                    name:'',
+                    component:''，
+                    children：[
+                        path：'',
+                        name:'',
+                        component:''，
+                    ]
+                }
+            ]
+      }
 
-# serve with hot reload at localhost:8080
-npm run dev
+4. 代表性的模块
 
-# build for production with minification
-npm run build
+    * 登录
+    * 表格
+    * 表单
+    * 树形控件 
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+5. 遇到的一些问题：
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+    * 导航守卫判断是否登录，没有判断它是否在登录页
+    * Elementui的一些原生组建与原型不太符合，进行了自定义封装 
+    * 用vuex没有把它挂载到vue上
+    * 做筛选不通过点击按钮就可以筛选，把它的值赋给了一个变量
+    * 做加载的时候用updata函数出现问题，后来改成用watch监听
+    * 路由跳转会跳转整个页面，标签加错位置
